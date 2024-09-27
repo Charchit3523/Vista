@@ -8,7 +8,7 @@ const connectDB= async () => {
         
     })
 
-    await mongoose.connect(`${process.env.MONGODB_URI}/vista`)
+    await mongoose.connect(`${process.env.MONGODB_URI}vista`)
 
 }
 
