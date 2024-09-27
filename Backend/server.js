@@ -1,14 +1,15 @@
-import express from  'express'
+import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
 import userRouter from './routes/userRoute.js'
+import productRouter from './routes/productRoute.js'
 
 
 
 // -------------------App Config-----------------------
- 
+
 const app = express()
 const port = process.env.PORT || 4000
 connectDB()
@@ -21,14 +22,15 @@ app.use(cors())
 
 //-----------------Api Endpoints-------------------------
 
-app.get('/',(req,res)=>{
-        res.send("API Working")
-    })
+app.get('/', (req, res) => {
+    res.send("API Working")
+})
 
 app.use('/api/user', userRouter)
+app.use('/api/product', productRouter)
 
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`Server started on ${port}`);
-    
+
 })

@@ -9,11 +9,11 @@ import Image from '../components/Image'
 function Home() {
   return (
     <div>
-      <Image/>
-      <LatestCollection/>
-      <BestSeller/>
-      
-      <OurPolicy/>
+      <Image />
+      <LatestCollection />
+      <BestSeller />
+
+      <OurPolicy />
     </div>
   )
 }

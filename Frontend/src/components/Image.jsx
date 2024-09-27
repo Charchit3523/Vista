@@ -10,10 +10,10 @@ const Image = () => {
     };
 
     return (
-        <img  
+        <img
             onClick={navigateCollection} // Call the function directly
-            className='w-full' 
-            src={assets.image} 
+            className='w-full'
+            src={assets.image}
             alt="Descriptive Alt Text" // Add a descriptive alt text for accessibility
         />
     );
