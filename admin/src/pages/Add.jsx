@@ -33,7 +33,7 @@ const Add = ({token}) => {
         formData.append("price",price)
         formData.append("category",category)
         formData.append("subCategory",subCategory)
-        formData.append("bestsellar",bestsellar)
+        formData.append("bestseller", bestsellar ? "true" : "false")
         formData.append("sizes",JSON.stringify(sizes))
 
         // adding image to form data
@@ -173,7 +173,7 @@ const Add = ({token}) => {
 
       <div className='flex gap-2 mt-2'>
         <input onChange={() => setbestsellar(prev => !prev)} checked={bestsellar} type="checkbox" id='bestseller' />
-        <label className='cursor-pointer ' htmlFor="bestseller">Add to bestsellar</label>
+        <label className='cursor-pointer ' htmlFor="bestseller">Add to bestseller</label>
       </div>
 
       {/*-------------------------------- Button--------------------------------- */}
