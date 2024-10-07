@@ -13,7 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [address, setAddress] = useState('')
-  const [phone, setPhone] = useState(0)
+  const [phone, setPhone] = useState('')
 
   // for the login and sign up if the user
   const onSubmitHandler = async (event) => {
@@ -61,29 +61,29 @@ const Login = () => {
   },[token])
 
   return (
-    <div className='flex flex-col sm:flex-row border border-gray-400 mt-4'>
+    <div className='flex flex-col sm:flex-row border border-gray-200 mt-4'>
       <form onSubmit={onSubmitHandler} className="flex flex-col items-center w-[80%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800">
-        <img src={assets.logo} alt="" />
+        {/* <img className='w-32' src={assets.logo} alt="" /> */}
         <div className='inline-flex items-center gap-2 mb-2 mt-10'>
           <p className='prata-regular text-3xl'>{currentState}</p>
           <hr className='border-none h-[1.5px] w-8 bg-gray-800' />
         </div>
         {
           currentState === 'Login' ? ''
-            : <input onChange={(e) => setName(e.target.value)} value={name} type="text" className='w-full px-3 py-2 border border-gray-800 rounded' placeholder='Name' required />
+            : <input onChange={(e) => setName(e.target.value)} value={name} type="text" className='w-full px-3 py-2 border border-gray-300 rounded' placeholder='Name' required />
         }
 
-        <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" className='w-full px-3 py-2 border border-gray-800 rounded' placeholder='Email Adress' required />
-        <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" className='w-full px-3 py-2 border border-gray-800 rounded' placeholder='Password' required />
+        <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" className='w-full px-3 py-2 border border-gray-300 rounded' placeholder='Email Adress' required />
+        <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" className='w-full px-3 py-2 border border-gray-300 rounded' placeholder='Password' required />
 
         {
           currentState === 'Login' ? ''
-            : <input onChange={(e) => setAddress(e.target.value)} value={address} type="text" className='w-full px-3 py-2 border border-gray-800 rounded' placeholder='Address' required />
+            : <input onChange={(e) => setAddress(e.target.value)} value={address} type="text" className='w-full px-3 py-2 border border-gray-300 rounded' placeholder='Address' required />
         }
 
         {
           currentState === 'Login' ? ''
-            : <input onChange={(e) => setPhone(e.target.value)} value={phone} type="number" className='[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none w-full px-3 py-2 border border-gray-800 rounded' placeholder='Phone Number' required />
+            : <input onChange={(e) => setPhone(e.target.value)} value={phone} type="number" className='[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none w-full px-3 py-2 border border-gray-300 rounded' placeholder='Phone Number' required />
         }
         <div className='w-full flex justify-between text-sm mt-[-8px]'>
           {
@@ -107,7 +107,9 @@ const Login = () => {
 
 
       </form>
-      <img className='w-full sm:w-1/2' src={assets.about_img} alt="" />
+      
+          <img className='h-full mt-14 mb-10 mr-10' src={assets.logo} alt="" />
+      
     </div>
   )
 }

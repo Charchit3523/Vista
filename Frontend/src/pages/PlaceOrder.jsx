@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import TItle from '../components/TItle'
 import CartTotal from '../components/CartTotal';
-import { assets } from '../assets/assets';
 import { ShopContext } from '../context/ShopContext';
 import axios from 'axios';
 import { toast } from "react-toastify";
@@ -49,8 +48,6 @@ const PlaceOrder = () => {
                      orderItems.push(itemInfo)
                   }
                }
-
-
             }
          }
 

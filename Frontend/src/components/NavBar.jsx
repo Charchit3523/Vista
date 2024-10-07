@@ -2,26 +2,35 @@ import React, { useContext, useState } from 'react'
 import { assets } from '../assets/assets'
 import { Link, NavLink } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
+import TItle from './TItle';
 
 const NavBar = () => {
 
     const [visible, setVisible] = useState(false);
-    const { setShowSearch, getCardCount, navigate, token, setToken, setCartItems} = useContext(ShopContext);
-    
+    const { setShowSearch, getCardCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
+
 
     const logout = () => {
         navigate('/login')
         localStorage.removeItem('token')
         setToken('')
         setCartItems({})
-        
+
     }
 
- 
+
     return (
         <div className='flex items-center justify-between py-5 font-medium'>
             <Link to='/'>
-                <img src={assets.logo} className="w-36" alt="" />
+                <div className='flex items-center  text-center  '>
+
+                    {/* <img src={assets.logo} className="w-32 h-13" alt="" />
+                    <p className='mb-2 w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p> */}
+                    <div className='w-32 text-base sm:text-2xl mt-4'>
+                        <TItle text1={'Vista'} text2={'Clothing'} />
+                    </div>
+                </div>
+
             </Link>
 
             <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
@@ -50,17 +59,17 @@ const NavBar = () => {
                 <img onClick={() => { setShowSearch(true) }} src={assets.search_icon} className='w-5 cursor-pointer ' alt="" />
 
                 <div className='group relative'>
-                    <img onClick={()=>{ token ? null : navigate('/login')}} className='w-5 cursor-pointer mr-2' src={assets.profile_icon} alt="" />
-                    
+                    <img onClick={() => { token ? null : navigate('/login') }} className='w-5 cursor-pointer mr-2' src={assets.profile_icon} alt="" />
+
 
                     {/* dropdown for profile when logged in */}
                     {
                         token &&
-                        
+
                         <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4 '>
                             <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-white text-gray-500 rounded'>
-                                <p className='cursor-pointer hover:text-black ' >My Profile</p>
-                                <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-black '>Order</p>
+                                <p onClick={()=> navigate('/profile')} className='cursor-pointer hover:text-black ' >My Profile</p>
+                                <p onClick={() => navigate('/orders')} className='cursor-pointer hover:text-black '>Order</p>
                                 <p onClick={logout} className='cursor-pointer hover:text-black '>Logout</p>
                             </div>
                         </div>

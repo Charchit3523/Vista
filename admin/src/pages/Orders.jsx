@@ -109,6 +109,7 @@ const Orders = ({ token }) => {
                 <p>Date : {new Date(order.date).toLocaleDateString()}</p>
               </div>
               <p className='text-sm sm:text-[15px]'> {currency} {order.amount}</p>
+              {/* status of the order */}
               <select onChange={(event)=>statusHandeler(event,order._id)} value={order.status} className='p-2 font-semibold'>
                 <option value="Order Placed">Order Placed</option>
                 <option value="Packing">Packing</option>

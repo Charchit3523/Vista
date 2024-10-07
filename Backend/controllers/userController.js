@@ -126,6 +126,11 @@ const registerUser = async (req, res) => {
     }
 
 }
+//------------------- for fetching User data------------------------------
+
+const fetchUser = async (req,res) => {
+    
+}
 
 // -------------------Route for admin Login------------------------------
 
